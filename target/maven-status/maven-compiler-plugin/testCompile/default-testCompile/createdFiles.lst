@@ -1,3 +1,8 @@
-test\java\br\ufc\dc\tpii\vmsys\HashMapInventoryTest.class
-test\java\br\ufc\dc\tpii\vmsys\VendingMachineTest.class
-test\java\br\ufc\dc\tpii\vmsys\ItemTest.class
+br\ufc\tpii\vmsys\inventory\exceptions\ItemNotFoundTest.class
+br\ufc\tpii\vmsys\VendingMachineTest.class
+br\ufc\tpii\vmsys\inventory\HashMapInventoryTest.class
+br\ufc\tpii\vmsys\inventory\ItemTest.class
+br\ufc\tpii\vmsys\inventory\exceptions\ItemAlreadyAddedTest.class
+br\ufc\tpii\vmsys\exceptions\InvalidSelectionTest.class
+br\ufc\tpii\vmsys\exceptions\InsufficientFundsTest.class
+br\ufc\tpii\vmsys\exceptions\OutOfStockTest.class

@@ -1,1 +1,8 @@
-C:\Users\Daniel\Desktop\Semestre_09\Tecnicas_de_prog_II\trab01\VMSys\src\test\java\br\ufc\dc\tpii\vmsys\AppTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\exceptions\InvalidSelectionTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\inventory\exceptions\ItemAlreadyAddedTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\exceptions\InsufficientFundsTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\inventory\exceptions\ItemNotFoundTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\exceptions\OutOfStockTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\inventory\HashMapInventoryTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\inventory\ItemTest.java
+C:\Users\Daniel\tarefa01\VMSys\src\test\java\br\ufc\tpii\vmsys\VendingMachineTest.java

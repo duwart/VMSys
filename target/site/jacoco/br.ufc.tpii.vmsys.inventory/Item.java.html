@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Item.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">VMSys</a> &gt; <a href="index.source.html" class="el_package">br.ufc.tpii.vmsys.inventory</a> &gt; <span class="el_source">Item.java</span></div><h1>Item.java</h1><pre class="source lang-java linenums">package br.ufc.tpii.vmsys.inventory;
+
+public class Item {
+	private String name;
+<span class="fc" id="L5">	private double price = 0.0;</span>
+<span class="fc" id="L6">	private int count = 0;</span>
+
+<span class="fc" id="L8">	public Item(String name, double price, int count) {</span>
+<span class="fc" id="L9">		this.setPrice(price);</span>
+<span class="fc bfc" id="L10" title="All 2 branches covered.">		if (name == &quot;&quot;) {</span>
+<span class="fc" id="L11">			throw new IllegalArgumentException(&quot;Name is a empty string&quot;);</span>
+		}
+<span class="fc" id="L13">		this.name = name;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">		if (count &lt; 0) {</span>
+<span class="fc" id="L15">			throw new IllegalArgumentException(&quot;Count value is invalid&quot;);</span>
+		}
+<span class="fc" id="L17">		this.count = count;</span>
+<span class="fc" id="L18">	}</span>
+
+	public String getName() {
+<span class="fc" id="L21">		return this.name;</span>
+	}
+
+	public double getPrice() {
+<span class="fc" id="L25">		return this.price;</span>
+	}
+
+	public void setPrice(double price) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">		if (price &lt;= 0.0) {</span>
+<span class="fc" id="L30">			throw new IllegalArgumentException(&quot;Price is invalid&quot;);</span>
+		}
+<span class="fc" id="L32">		this.price = price;</span>
+<span class="fc" id="L33">	}</span>
+
+	public int getCount() {
+<span class="fc" id="L36">		return this.count;</span>
+	}
+
+	public void decCount() {
+		// this.count++;
+<span class="fc bfc" id="L41" title="All 2 branches covered.">		if (this.count == 0) {</span>
+<span class="fc" id="L42">			throw new IllegalArgumentException(&quot;Number of items is zero&quot;);</span>
+		}
+<span class="fc" id="L44">		this.count--;</span>
+<span class="fc" id="L45">	}</span>
+
+	public void incCount() {
+		// this.count--;
+<span class="fc" id="L49">		this.count++;</span>
+<span class="fc" id="L50">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

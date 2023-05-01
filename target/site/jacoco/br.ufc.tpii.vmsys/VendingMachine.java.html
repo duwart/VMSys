@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VendingMachine.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">VMSys</a> &gt; <a href="index.source.html" class="el_package">br.ufc.tpii.vmsys</a> &gt; <span class="el_source">VendingMachine.java</span></div><h1>VendingMachine.java</h1><pre class="source lang-java linenums">package br.ufc.tpii.vmsys;
+
+import br.ufc.tpii.vmsys.exceptions.*;
+import br.ufc.tpii.vmsys.inventory.*;
+import br.ufc.tpii.vmsys.inventory.exceptions.*;
+
+public class VendingMachine {
+
+<span class="fc" id="L9">	private double coinsDeposited = 0.0;</span>
+
+	private Inventory inventory;
+
+<span class="fc" id="L13">	public VendingMachine(Inventory inventory) {</span>
+<span class="fc" id="L14">		this.inventory = inventory;</span>
+<span class="fc" id="L15">	}</span>
+
+	public void addCoins(double coins) {
+<span class="fc bfc" id="L18" title="All 2 branches covered.">		if (coins &lt; 0) {</span>
+<span class="fc" id="L19">			throw new IllegalArgumentException(&quot;Invalid value&quot;);</span>
+		}
+<span class="fc" id="L21">		this.coinsDeposited += coins;</span>
+<span class="fc" id="L22">	}</span>
+
+	public double withdrawRemainingCoins() {
+<span class="fc" id="L25">		double remainingCoins = this.coinsDeposited;</span>
+<span class="fc" id="L26">		this.coinsDeposited = 0.0;</span>
+<span class="fc" id="L27">		return remainingCoins;</span>
+	}
+
+	public double howManyCoinsLeft() {
+<span class="fc" id="L31">		return this.coinsDeposited;</span>
+	}
+
+	public void vend(String itemName) throws InvalidSelection, OutOfStock, InsufficientFunds {
+<span class="fc" id="L35">		Item item = null;</span>
+
+		try {
+<span class="fc" id="L38">			item = inventory.getItem(itemName);</span>
+
+<span class="fc" id="L40">		} catch (ItemNotFound inf) {</span>
+<span class="fc" id="L41">			throw new InvalidSelection(&quot;Invalid item selection: &quot; + itemName);</span>
+<span class="fc" id="L42">		}</span>
+
+<span class="fc bfc" id="L44" title="All 2 branches covered.">		if (item.getCount() == 0) {</span>
+<span class="fc" id="L45">			throw new OutOfStock(&quot;Item out of stock: &quot; + itemName);</span>
+		}
+
+<span class="fc bfc" id="L48" title="All 2 branches covered.">		if (item.getPrice() &gt; this.coinsDeposited) {</span>
+<span class="fc" id="L49">			throw new InsufficientFunds(&quot;Insufficient coins to by &quot; + itemName + &quot;: &quot; + this.coinsDeposited);</span>
+		}
+
+<span class="fc" id="L52">		this.coinsDeposited -= item.getPrice();</span>
+
+<span class="fc" id="L54">		item.decCount();</span>
+<span class="fc" id="L55">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
