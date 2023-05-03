@@ -107,11 +107,6 @@
 						                </limit>
 						            </limits>
 						        </rule>
-						        <!--  regra para o elemento SOURCEFILE que especifica que as coberturas de LINHA e BRANCH 
-						        devem atingir um mínimo de 80% e 70%, respectivamente. Isso significa que pelo menos 80% 
-						        das linhas de código em um arquivo de origem e 70% das ramificações de código precisam 
-						        ser cobertas pelos testes. Note que este exemplo utiliza os limiares de COVEREDRATIO para 
-						        especificar as porcentagens mínimas de cobertura. -->
 						        <rule>
 			                        <element>SOURCEFILE</element>
 			                        <limits>
@@ -127,12 +122,6 @@
 			                            </limit>
 			                        </limits>
 			                    </rule>
-			                    <!--
-			                    elemento METHOD que especifica que as coberturas de INSTRUÇÃO e COMPLEXIDADE devem atingir 
-			                    um mínimo de 90% e um máximo de 100, respectivamente. Isso significa que pelo menos 90% das 
-			                    instruções em um método e o total de complexidade do método não devem exceder 100. Note 
-			                    que este exemplo utiliza os limiares de COVEREDRATIO e TOTALCOUNT para especificar as 
-			                    porcentagens mínimas e máximas de cobertura, respectivamente.
 			                    -->
 			                    <rule>
 			                        <element>METHOD</element>
