@@ -15,7 +15,7 @@ class ItemTest {
 		assertThrows(IllegalArgumentException.class, () -> {
 			new Item("", 10.0, 2);
 		});
-		assertThrows(IllegalArgumentException.class, () -> {
+		assertThrows(NullPointerException.class, () -> {
 			new Item(null, 10.0, 2);
 		});
 		assertThrows(IllegalArgumentException.class, () -> {
